@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}" />
+
+    {{ if .Site.Params.disqus }}
+      <script id="dsq-count-scr" src="//{{ .Site.Params.disqus }}.disqus.com/count.js" async></script>
+    {{ end }}
+  </head>
+
+  <body>
+    <nav>
+      <h3 class="heading">
+        <a href="/">{{ .Site.Title }}</a>
+        &nbsp;
+        <a href="https://t.me/ch_11" class="solid"><i class='fab fa-telegram-plane'></i></a>
+      </h3>
+      <ul class="menu">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL | relURL }}" class="solid">{{ .Pre }}{{ .Name }}</a>
+        </li>
+        {{ end }}
+        <li>{{ partial "search.html" . }}</li>
+      </ul>
+    </nav>
+    <hr/>

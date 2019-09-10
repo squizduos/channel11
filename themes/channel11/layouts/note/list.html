@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div class="title">Notes</div>
+
+<div>
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "note") }}
+  
+  {{ range $paginator.Pages }}
+    {{ if or (not .Params.archived) .Site.IsServer }}
+        {{ .Render "summary"}}
+    {{ end }}
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+</div>
+
+{{ partial "footer.html" . }}

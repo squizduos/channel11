@@ -1,0 +1,16 @@
+  <hr/>
+
+  <footer>
+    <div class="copyright">
+        &copy; {{ now.Format "2006" }} 
+        {{ if .Site.Params.Author }}
+          <a href="mailto:{{ .Site.Params.Author.email }}" class="solid">{{ .Site.Params.Author.name }}</a>
+        {{ else }}
+          <a href="/" class="solid">{{ .Site.Title }}</a>
+        {{ end }}
+    </div>
+    {{ partial "socials.html" . }}
+  </footer>
+
+  </body>
+</html>

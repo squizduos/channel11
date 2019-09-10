@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+{{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+<div>
+    {{ range $paginator.Pages }}
+        {{ if or (not .Params.archived) .Site.IsServer }}
+            {{ .Render "summary"}}
+        {{ end }}
+    {{ end }}
+    
+    {{ partial "pagination.html" . }}
+</div>
+
+{{ partial "footer.html" . }}

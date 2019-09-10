@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<div class="title">Tags list</div>
+
+<ul class="tags">
+  {{ range .Data.Terms }}
+  {{ if or (not .Page.Params.archived) .Page.Site.IsServer }}
+    <li>
+      <span class="tag">
+          <i class="fa fa-hashtag fa-fw"></i>
+          <a href="{{ .Page.RelPermalink }}" class="solid">{{ .Page.Title }}</a>
+      </span>    
+      <span class="count">{{ .Count }}</span>
+    </li>
+  {{ end }}
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

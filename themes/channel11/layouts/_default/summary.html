@@ -1,0 +1,49 @@
+<summary>
+    <header>
+        
+        
+
+        <span>
+            
+            <span class="badge post-title">
+                    {{ if eq .Type "notes"}}
+                        <i class="far fa-sticky-note"></i>
+                    {{ else }}
+                        <i class="far fa-newspaper"></i>
+                    {{ end }}
+                    <a href="{{ .RelPermalink }}">
+                        {{ .Title | markdownify | truncate 50 }}
+                    </a>
+            </span>
+
+            
+
+            
+            
+        </span>
+        
+        <span class="meta">
+            {{ partial "post-meta.html" . }}
+        </meta>
+
+    </header>
+
+    <main>
+        {{ .Summary }}
+    </main>
+
+    <footer>
+        
+        {{ partial "tags.html" . }}
+        
+        
+        <span class="badge grey read">
+            {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}">
+                    Read more
+                    <i class="fa fa-angle-double-right fa-fw" style="margin-right: 0"></i>
+                </a>
+            {{ end }}
+        </span>
+    </footer>
+</summary>

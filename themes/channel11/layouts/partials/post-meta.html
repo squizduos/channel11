@@ -1,0 +1,25 @@
+{{ if .Draft }}
+    <span class="badge draft">
+        <i class="fas fa-pen-square"></i>Черновик
+    </span>
+{{ end }}
+
+{{ if .Params.archived }}
+    <span class="badge archived">
+        <i class="fas fa-archive"></i>Архив
+    </span>
+{{ end }}
+
+{{ if .Date }}
+    <span class="badge light date">
+        <i class="fa fa-calendar fa-fw"></i> 
+        {{ .Date.Format "02.01.2006" }}
+    </span>
+{{ end }}
+
+{{ if (isset .Params "author") }}
+    <span class="badge light author">
+        <i class="fa fa-user fa-fw"></i>
+        {{ .Params.author }}
+    </span>
+{{ end }}

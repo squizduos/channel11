@@ -1,0 +1,74 @@
+baseURL = "https://www.channel11.info/"
+languageCode = "ru-ru"
+
+title = "Channel 11"
+theme = "channel11"
+
+paginate = 10
+
+
+[indexes]
+  tag = "tags"
+
+[permalinks]
+    post = "/blog/:slug/"
+    note = "/note/:slug/"
+
+[author]
+    name = "Semyon Bochkaryov"
+
+[[menu.main]]
+    name = "Tags"
+    pre = "<i class='fa fa-hashtag'></i>"
+    url = "/tags/"
+    weight = 1
+[[menu.main]]
+    name = "Notes"
+    pre = "<i class='fa fa-list-alt'></i>"
+    url = "/note/"
+    weight = 2
+[[menu.main]]
+    name = "Info"
+    pre = "<i class='fa fa-desktop'></i>"
+    url = "/info/"
+    weight = 3
+[[menu.main]]
+    name = "RSS"
+    pre = "<i class='fas fa-rss'></i>"
+    url = "/index.xml"
+    weight = 4
+
+[params]
+    description = "Канал про IT, а ещё немного про политику и тёмные стороны жизни."
+    dateFormat = "02.01.2006 15:04"
+    domain = "channel11.info"
+    disqus = "channel-11"
+
+[params.post]
+    # show_author = "true"
+
+[params.author]
+    name = "Semyon Bochkaryov"
+    email = "me@channel11.info" 
+    telegram = "squizduos"
+
+[[params.socials]]
+    name = "Telegram"
+    icon = "fab fa-telegram"
+    url = "https://t.me/squizduos" 
+[[params.socials]]
+    name = "Twitter"
+    icon = "fab fa-twitter-square"
+    url = "https://twitter.com/squizduos" 
+[[params.socials]]
+    name = "VK"
+    icon = "fab fa-vk"
+    url = "https://vk.com/squizduos" 
+# [[params.socials]]
+#     name = "Facebook"
+#     icon = "fab fa-facebook-square"
+#     url = "https://facebook.com/squizduos" 
+# [[params.socials]]
+#     name = "Instagram"
+#     icon = "fab fa-instagram"
+#     url = "https://instagram.com/squizduos" 
