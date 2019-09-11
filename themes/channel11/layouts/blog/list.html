@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 
-{{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+{{ $section := where .Site.RegularPages "Type" "blog" }}
+
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") }}
 <div>
     {{ range $paginator.Pages }}
         {{ if or (not .Params.archived) .Site.IsServer }}

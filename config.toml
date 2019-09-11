@@ -10,9 +10,9 @@ paginate = 10
 [indexes]
   tag = "tags"
 
-[permalinks]
-    post = "/blog/:slug/"
-    note = "/note/:slug/"
+# [permalinks]
+#    post = "/blog/:slug/"
+#    note = "/note/:slug/"
 
 [author]
     name = "Semyon Bochkaryov"

@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
+    <!-- <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" /> -->
     <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}" />
+
+    {{ $sass := resources.Get "sass/main.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen">
+
 
     {{ if .Site.Params.disqus }}
       <script id="dsq-count-scr" src="//{{ .Site.Params.disqus }}.disqus.com/count.js" async></script>
