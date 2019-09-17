@@ -1,4 +1,4 @@
-baseURL = "https://www.channel11.info/"
+# baseURL = "https://www.channel11.info/"
 languageCode = "ru-ru"
 
 title = "Channel 11"
