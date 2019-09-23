@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    
+    {{ block "meta" . }}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,minimum-scale=1">
+    {{ end }}
+
+    {{ block "title" . }}
+        <title>
+            {{ with .Params.Title }}{{ . }} | {{ end }}
+            {{ .Site.Title }} 
+        </title>
+    {{ end }}
+    
+    {{ block "css" . }}
+        <link rel="stylesheet" href='{{ "/css/font-awesome.min.css" | relURL }}' />
+        
+        <!-- TODO: https://blog.fullstackdigital.com/how-to-use-hugo-template-variables-in-scss-files-in-2018-b8a834accce -->
+        <link rel="stylesheet" href='{{ "/css/style.css" | relURL }}' />
+    {{ end }}
+  </head>
+
+  <body>
+    <nav>
+        {{ partial "header/heading.html" .}}
+        {{ partial "header/menu.html" .}}
+    </nav>
+
+    <hr/>
+
+    {{ block "main" . }}
+        <main>
+
+        </main>
+    {{ end }}
+
+    <hr/>
+    
+    {{ block "footer" . }}
+        <footer>
+            {{ partialCached "footer/copyright.html" . }}
+            {{ partialCached "footer/socials.html" . }}
+        </footer>
+    {{ end }}
+
+  </body>
+</html>

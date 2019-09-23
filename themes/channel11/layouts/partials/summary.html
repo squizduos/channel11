@@ -1,0 +1,34 @@
+<summary>
+    <header>
+        <span>
+            <span class="badge post-title">
+                <i class="far fa-newspaper"></i>
+                <a href="{{ .RelPermalink }}">
+                    {{ .Title | markdownify | truncate 50 }}
+                </a>
+            </span>
+        </span>
+        
+        <span class="meta">
+            {{ partial "badges/draft.html" . }}
+            {{ partial "badges/archive.html" . }}
+            {{ partial "badges/date.html" . }}
+            {{ partial "badges/author.html" . }}
+        </meta>
+
+    </header>
+
+    <main>
+        {{ .Summary }}
+    </main>
+
+    <footer>
+        {{ if isset .Params "tags" }}
+            {{ partial "badges/tags.html" . }}
+        {{ end }}
+
+        {{ if .Truncated }}
+            {{ partial "badges/more.html" . }}
+        {{ end }}
+    </footer>
+</summary>

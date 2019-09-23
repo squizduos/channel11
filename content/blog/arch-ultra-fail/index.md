@@ -4,7 +4,7 @@ description: "Не пытайтесь повторить это дома."
 date: 2014-10-31T12:40:23Z
 tags:
 - Linux
-archived: True
+archived: true
 comments: true
 ---
 

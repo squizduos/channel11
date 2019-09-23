@@ -1,0 +1,29 @@
+<article>
+    {{ if .Title }}
+    <header>
+        <title>{{ .Title | markdownify }}</title>
+        <div class="description">{{ .Description | markdownify }}</div>
+        <div class="meta">
+            <div>
+                {{ partial "badges/draft.html" . }}
+                {{ partial "badges/archive.html" . }}
+                {{ partial "badges/date.html" . }}
+                {{ partial "badges/author.html" . }}
+            </div>
+            
+            <div>
+                {{ if isset .Params "tags" }}
+                    {{ partial "badges/tags.html" . }}
+                {{ end }}
+            </div>
+
+        </div>
+    </header>
+    {{ end }}
+
+    <main>
+        {{ .Content }}
+    </main>
+
+    {{ partial "disqus.html" . }}
+</article>

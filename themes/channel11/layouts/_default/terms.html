@@ -1,19 +1,19 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-<div class="title">Tags list</div>
+<main>
+    <div class="title">Облако тегов</div>
 
-<ul class="tags">
-  {{ range .Data.Terms }}
-  {{ if or (not .Page.Params.archived) .Page.Site.IsServer }}
-    <li>
-      <span class="tag">
-          <i class="fa fa-hashtag fa-fw"></i>
-          <a href="{{ .Page.RelPermalink }}" class="solid">{{ .Page.Title }}</a>
-      </span>    
-      <span class="count">{{ .Count }}</span>
-    </li>
-  {{ end }}
-  {{ end }}
-</ul>
-
-{{ partial "footer.html" . }}
+    <ul class="tags">
+      {{ range .Data.Terms }}
+        <li>
+          <span class="tag">
+              <i class="fa fa-hashtag fa-fw"></i>
+              <a href="{{ .Page.RelPermalink }}" class="solid">{{ .Page.Title }}</a>
+          </span>    
+          <span class="count">{{ .Count }}</span>
+        </li>
+      {{ end }}
+    </ul>
+    
+</main>
+{{ end }}

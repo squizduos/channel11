@@ -14,7 +14,7 @@ docker-build:
 	docker build -t ${AUTHOR}/${PROJECT}:dev .
 
 docker-watch:
-	docker run -t -p 9090:80 ${AUTHOR}/${PROJECT}:dev
+	docker run -it -p 1414:8080 --rm ${AUTHOR}/${PROJECT}:dev
 
 push:
 	docker tag ${AUTHOR}/${PROJECT}:dev ${REPO}/${AUTHOR}/${PROJECT}:${CURRENT}

@@ -1,0 +1,6 @@
+{{ if (isset .Params "author") }}
+    <span class="badge light author">
+        <i class="fa fa-user fa-fw"></i>
+        {{ .Params.author }}
+    </span>
+{{ end }}

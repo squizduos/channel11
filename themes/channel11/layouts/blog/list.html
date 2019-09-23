@@ -1,16 +1,16 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-{{ $section := where .Site.RegularPages "Type" "blog" }}
+{{ $pages :=  where (where .Site.RegularPages "Type" "blog") ".Params.archived" "!=" "true" }}
 
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") }}
-<div>
+
+<main>
+    {{ $paginator := .Paginate $pages }}
+
     {{ range $paginator.Pages }}
-        {{ if or (not .Params.archived) .Site.IsServer }}
-            {{ .Render "summary"}}
-        {{ end }}
+        {{ partial "summary.html" . }}
     {{ end }}
-    
-    {{ partial "pagination.html" . }}
-</div>
 
-{{ partial "footer.html" . }}
+    {{ partial "pagination.html" . }}
+</main>
+
+{{ end }}

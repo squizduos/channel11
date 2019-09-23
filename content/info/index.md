@@ -1,13 +1,13 @@
 ---
-title: "Info"
 toc: true
 comments: false
-# sharing: true
-# footer: true
 ---
 
-Сюда переехал Squizduos Slowblog. Здесь что-нибудь будет. Наверное.
+Сюда переехал Squizduos SlowBlog с [официального сайта](https://www.squizduos.ru).
 
-Написать мне можно [сюда](mailto:me@channel11.info).
+Здесь чаще всего пишут про IT, реже про бытовые вещи, иногда — про книги, и почти всегда — кратко. Я стараюсь создать здесь симбиоз собственной Wiki, места для дискуссий, рекламной странички и собственной прокрастинации. 
 
----
+### На чем работает
+
+ - Hugo 0.58.2 extended
+ - Theme hugo-ch11, inspired by hugo-xmin

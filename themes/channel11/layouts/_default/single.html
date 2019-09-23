@@ -1,31 +1,5 @@
-{{ partial "header.html" . }}
-
-<article>
-    <header>
-        <title>{{ .Title | markdownify }}</title>
-        <div class="description">{{ .Description | markdownify }}</div>
-        <div class="meta">
-            <div>
-                {{ partial "post-meta.html" . }}
-            </div>
-            
-            <div>
-                {{ if isset .Params "tags" }}
-                    {{ partial "tags.html" . }}
-                {{ end }}
-            </div>
-            
-            
-            
-        </div>
-    </header>
-
-    <main>
-        {{ .Content }}
-    </main>
-
-    {{ partial "disqus.html" . }}
-
-</article>
-
-{{ partial "footer.html" . }}
+{{ define "main" }}
+<main>
+    {{ partial "article.html" . }}
+</main>
+{{ end }}

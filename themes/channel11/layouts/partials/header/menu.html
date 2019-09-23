@@ -1,0 +1,10 @@
+<ul class="menu">
+    {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL | relURL }}" class="solid">{{ .Pre }}{{ .Name }}</a>
+        </li>
+    {{ end }}
+    <li>
+        <div>{{ partial "header/search.html" . }}</div>
+    </li>
+</ul>

@@ -1,0 +1,59 @@
+# baseURL: 'https://www.channel11.info/'
+
+languageCode: ru-ru
+title: Channel 11
+theme: channel11
+paginate: 10
+
+taxonomies:
+  tag: tags
+indexes:
+  tag: tags
+
+author:
+  name: Semyon Bochkaryov
+
+menu:
+  main:
+    - name: Tags
+      pre: <i class='fa fa-hashtag'></i>
+      url: /tags/
+      weight: 1
+    - name: Notes
+      pre: <i class='fa fa-list-alt'></i>
+      url: /notes/
+      weight: 2
+    - name: Info
+      pre: <i class='fa fa-desktop'></i>
+      url: /info/
+      weight: 3
+    - name: RSS
+      pre: <i class='fas fa-rss'></i>
+      url: /index.xml
+      weight: 4
+
+params:
+  head: <a href="https://t.me/ch_11" class="solid"><i class='fab fa-telegram-plane'></i></a>
+  description: 'Канал про IT, а ещё немного про политику и тёмные стороны жизни.'
+  dateFormat: '02.01.2006 15:04'
+  domain: channel11.info
+  disqus: channel-11
+  post: {}
+  author:
+    name: Semyon Bochkaryov
+    email: squizduos@gmail.com
+    telegram: squizduos
+    social:
+      name: Telegram
+      icon: fab fa-telegram-plane
+      url: https://teleg.one/ch_11
+  socials:
+    - name: Telegram
+      icon: fab fa-telegram
+      url: 'https://t.me/squizduos'
+    - name: Twitter
+      icon: fab fa-twitter-square
+      url: 'https://twitter.com/squizduos'
+    - name: VK
+      icon: fab fa-vk
+      url: 'https://vk.com/squizduos'

@@ -1,0 +1,6 @@
+{{ if .Date }}
+    <span class="badge light date">
+        <i class="fa fa-calendar fa-fw"></i> 
+        {{ .Date.Format "02.01.2006" }}
+    </span>
+{{ end }}
