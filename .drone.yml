@@ -33,7 +33,7 @@ steps:
     from_secret: notify_telegram_id
   token:
     from_secret: notify_telegram_token
-  message: Сборка channel11/new_blog:${DRONE_TAG} завершена.
+  message: Сборка channel11/new_blog завершена.
   when:
     event:
     - push
