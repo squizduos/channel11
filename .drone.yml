@@ -11,7 +11,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: channel11/new_blog
+    repo: registry.squizduos.ru/channel11/new_blog
     tags: latest
 
 - name: telegram
