@@ -17,7 +17,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: registry.squizduos.ru/channel11/new_blog
+    repo: registry.squizduos.ru/channel11/web
     tags: latest
 
 - name: notify
@@ -28,11 +28,9 @@ steps:
     token:
       from_secret: notify_telegram_token
     message: >
-      *{{repo.owner}}/{{repo.name}}*  
-
-      [Build {{build.number}}]({{build.link}}) by {{commit.author}} {{#success build.status}}succeeded{{else}}failed{{/success}} in {{buildtime build.started}}  
-
-      `{{truncate commit.sha 8}}`: "{{commit.message}}"
+      {{repo.owner}}/{{repo.name}}: \[{{build.status}}] Build {{build.number}}
+      {{commit.author}} pushed to {{commit.branch}} {{commit.sha}}: `{{commit.message}}`
+      Build started at {{datetime build.started "2006-Jan-02T15:04:05Z" "GMT+2"}} finished at {{datetime build.finished "2006-Jan-02T15:04:05Z" "GMT+2"}}.
 
 trigger:
   branch:
