@@ -27,7 +27,7 @@ steps:
 - name: telegram
   image: appleboy/drone-telegram
   to: 
-    from_secret: notify_telegram_id # 57439615
+    from_secret: notify_telegram_id
   token:
     from_secret: notify_telegram_token
   message: Сборка www.channel11.info завершена.
