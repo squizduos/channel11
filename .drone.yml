@@ -6,8 +6,7 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    registry: 
-      from_secret: docker_registry
+    registry: registry.squizduos.ru
     username:
       from_secret: docker_username
     password:
