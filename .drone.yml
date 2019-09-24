@@ -9,7 +9,8 @@ steps:
     - hugo check
     - hugo
   when:
-    branch: [ master ]
+    event:
+    - push
 
 - name: docker-publish
   image: plugins/docker
@@ -22,7 +23,8 @@ steps:
       from_secret: docker_password
     repo: channel11/new_blog
   when:
-    branch: [ master ]
+    event:
+    - push
 
 - name: telegram
   image: appleboy/drone-telegram
@@ -30,6 +32,7 @@ steps:
     from_secret: notify_telegram_id
   token:
     from_secret: notify_telegram_token
-  message: Сборка www.channel11.info завершена.
+  message: Сборка channel11/new_blog:${DRONE_TAG} завершена.
   when:
-    branch: [ master ]
+    event:
+    - push
