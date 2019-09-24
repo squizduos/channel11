@@ -16,11 +16,12 @@ steps:
 
 - name: telegram
   image: appleboy/drone-telegram
-  to: 
-    from_secret: notify_telegram_id
-  token:
-    from_secret: notify_telegram_token
-  message: Сборка channel11/new_blog завершена.
+  settings:
+    to: 
+      from_secret: notify_telegram_id
+    token:
+      from_secret: notify_telegram_token
+    message: Сборка channel11/new_blog завершена.
 
 trigger:
   branch:
