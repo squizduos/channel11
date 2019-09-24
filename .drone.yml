@@ -29,8 +29,6 @@ steps:
       from_secret: notify_telegram_token
     format: markdown
     message: >
-      {{repo}}
-      {{ range $k, $v := repo }}Key:{{ $k }}, Value:{{ $v }}{{ end }}
       {{#success build.status}}
       ✅ Build #{{build.number}} of `{{repo.name}}` succeeded.
 
