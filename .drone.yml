@@ -4,12 +4,6 @@ name: default
 
 steps:
 - name: build
-  image: woahbase/alpine-hugo:latest
-  commands:
-    - hugo check
-    - hugo
-
-- name: docker-publish
   image: plugins/docker
   settings:
     registry: 
