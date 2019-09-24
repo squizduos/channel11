@@ -1,24 +1,35 @@
-pipeline:
-  build:
-    image: monachus/hugo:v0.57-2
-    commands:
-     - hugo check
-     - hugo
-    when:
-      branch: [ master ]
-  deploy:
-    image: plugins/docker
-    registry: rg.nl-ams.scw.cloud
-    repo: squizduos/channel11_info
-    tags: latest
-    secrets: [ docker_username, docker_password ]
-    when:
-      branch: [ master ]
-  telegram:
-    image: appleboy/drone-telegram
-    secrets: [ telegram_token ]
-    token: ${TELEGRAM_TOKEN}
-    to: 57439615
-    message: Сборка www.channel11.info завершена.
-    when:
-      branch: [ master ]
+---
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: monachus/hugo:v0.58-2
+  commands:
+    - hugo check
+    - hugo
+  when:
+    branch: [ master ]
+
+- name: docker-publish
+  image: plugins/docker
+  settings:
+    registry: 
+      from_secret: docker_registry
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: channel11/new_blog
+  when:
+    branch: [ master ]
+
+- name: telegram
+  image: appleboy/drone-telegram
+  to: 
+    from_secret: notify_telegram_id # 57439615
+  token:
+    from_secret: notify_telegram_token
+  message: Сборка www.channel11.info завершена.
+  when:
+    branch: [ master ]
