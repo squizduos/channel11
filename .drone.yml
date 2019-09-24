@@ -8,9 +8,6 @@ steps:
   commands:
     - hugo check
     - hugo
-  when:
-    event:
-    - push
 
 - name: docker-publish
   image: plugins/docker
@@ -23,9 +20,6 @@ steps:
       from_secret: docker_password
     repo: channel11/new_blog
     tags: latest
-  when:
-    event:
-    - push
 
 - name: telegram
   image: appleboy/drone-telegram
@@ -34,6 +28,7 @@ steps:
   token:
     from_secret: notify_telegram_token
   message: Сборка channel11/new_blog завершена.
-  when:
-    event:
-    - push
+
+trigger:
+  branch:
+  - master
