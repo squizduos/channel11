@@ -7,6 +7,6 @@ WORKDIR /app
 RUN hugo
 
 # Serve Hugo site with minimal nginx
-FROM squizduos/hugo-nginx:latest
+FROM nginx:alpine
 
-COPY --from=builder /app/public/ /web/
+COPY --from=builder /app/public/ /usr/share/nginx/html
