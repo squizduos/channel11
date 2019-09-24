@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: build
-  image: monachus/hugo:v0.58-2
+  image: woahbase/alpine-hugo:latest
   commands:
     - hugo check
     - hugo
