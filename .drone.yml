@@ -4,6 +4,12 @@ name: default
 
 steps:
 - name: build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.58.2
+    validate: true
+
+- name: docker
   image: plugins/docker
   settings:
     registry: registry.squizduos.ru
@@ -14,7 +20,7 @@ steps:
     repo: registry.squizduos.ru/channel11/new_blog
     tags: latest
 
-- name: telegram
+- name: notify
   image: appleboy/drone-telegram
   settings:
     to: 
