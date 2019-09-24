@@ -18,7 +18,7 @@ steps:
     password:
       from_secret: docker_password
     repo: registry.squizduos.ru/channel11/web
-    tags: ${DRONE_TAG}
+    tags: latest
 
 - name: notify
   image: appleboy/drone-telegram
@@ -33,7 +33,7 @@ steps:
       ✅ Build #{{build.number}} of `{{repo.name}}` succeeded.
 
 
-      📝 Pushed to Docker Registry `registry.squizduos.ru/channel11/web:${DRONE_TAG}`
+      📝 Pushed to Docker Registry `registry.squizduos.ru/channel11/web:latest`
 
 
       🌐 {{ build.link }}
