@@ -22,6 +22,7 @@ steps:
     password:
       from_secret: docker_password
     repo: channel11/new_blog
+    tags: latest
   when:
     event:
     - push
